@@ -1,18 +1,46 @@
 #!/bin/bash
+# My Telegram : https://t.me/Akbar218
+# ==========================================
+# Color
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+LIGHT='\033[0;37m'
+# ==========================================
+# Getting
+MYIP=$(wget -qO- ipinfo.io/ip);
+echo "Checking VPS"
+IZIN=$( curl https://raw.githubusercontent.com/senowahyu62/perizinan/main/ipvps.txt | grep $MYIP )
+if [ $MYIP = $MYIP ]; then
+echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+else
+echo -e "${NC}${RED}Permission Denied!${NC}";
+echo -e "${NC}${LIGHT}Please Contact Admin!!"
+echo -e "${NC}${LIGHT}Telegram : https://t.me/amiqyu"
+exit 0
+fi
+# By Akbar Maulana
+# ==================================================
+# Link Hosting Kalian
+cloudvpn="raw.githubusercontent.com/warouhh/new/main/install"
+
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
-MYIP=$(wget -qO- icanhazip.com);
+MYIP=$(wget -qO- ipinfo.io/ip);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 ANU=$(ip -o $ANU -4 route show to default | awk '{print $5}');
-domain=$(cat /root/domain)
 
 # Install OpenVPN dan Easy-RSA
 apt install openvpn easy-rsa unzip -y
 apt install openssl iptables iptables-persistent -y
 mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
-wget https://raw.githubusercontent.com/warouhh/new/main/install/vpn.zip
+wget https://${cloudvpn}/vpn.zip
 unzip vpn.zip
 rm -f vpn.zip
 chown -R root:root /etc/openvpn/server/easy-rsa/
@@ -25,8 +53,8 @@ cp /usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so /usr/lib
 sed -i 's/#AUTOSTART="all"/AUTOSTART="all"/g' /etc/default/openvpn
 
 # restart openvpn dan cek status openvpn
-systemctl enable --now openvpn-server@server-tcp-1194
-systemctl enable --now openvpn-server@server-udp-2200
+systemctl enable --now openvpn-server@server-tcp
+systemctl enable --now openvpn-server@server-udp
 /etc/init.d/openvpn restart
 /etc/init.d/openvpn status
 
@@ -36,76 +64,49 @@ sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 
 # Buat config client TCP 1194
 cat > /etc/openvpn/tcp.ovpn <<-END
-############## WELCOME ###############
-############# By ZenHost ##############
 client
 dev tun
 proto tcp
-setenv CLIENT_CERT 0
-remote $domain 1194
+remote xxxxxxxxx 1194
 resolv-retry infinite
 route-method exe
 nobind
-remote-cert-tls server
-cipher AES-256-CBC
-auth SHA256
 persist-key
 persist-tun
 auth-user-pass
 comp-lzo
 verb 3
-
-setenv FRIENDLY_NAME "Ovpn Tcp"
-http-proxy xxxxxxxxx 3128
-http-proxy-option CUSTOM-HEADER CONNECT HTTP/1.1
-http-proxy-option CUSTOM-HEADER Host bug.com
-http-proxy-option CUSTOM-HEADER X-Online-Host bug.com
-http-proxy-option CUSTOM-HEADER X-Forward-Host bug.com
-http-proxy-option CUSTOM-HEADER Connection: keep-alive
 END
 
 sed -i $MYIP2 /etc/openvpn/tcp.ovpn;
 
 # Buat config client UDP 2200
 cat > /etc/openvpn/udp.ovpn <<-END
-############## WELCOME ###############
-############# By YudhyNet ##############
 client
 dev tun
 proto udp
-setenv CLIENT_CERT 0
-remote $domain 2200
+remote xxxxxxxxx 2200
 resolv-retry infinite
 route-method exe
 nobind
-remote-cert-tls server
-cipher AES-256-CBC
-auth SHA256
 persist-key
 persist-tun
 auth-user-pass
 comp-lzo
 verb 3
-setenv FRIENDLY_NAME "Ovpn Udp"
 END
 
 sed -i $MYIP2 /etc/openvpn/udp.ovpn;
 
 # Buat config client SSL
 cat > /etc/openvpn/ssl.ovpn <<-END
-############## WELCOME ###############
-############# By Yudhy net ##############
 client
 dev tun
 proto tcp
-setenv CLIENT_CERT 0
-remote $domain 990
+remote xxxxxxxxx 990
 resolv-retry infinite
 route-method exe
 nobind
-remote-cert-tls server
-cipher AES-256-CBC
-auth SHA256
 persist-key
 persist-tun
 auth-user-pass
