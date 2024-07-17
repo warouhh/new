@@ -25,7 +25,7 @@ wget -O /etc/systemd/system/ws-dropbear.service ${url}/sshws/service-wsdropbear.
 wget -O /etc/systemd/system/ws-stunnel.service ${url}/sshws/ws-stunnel.service.txt && chmod +x /etc/systemd/system/ws-stunnel.service
 
 #System Websocket-OpenVPN Python
-wget -O /etc/systemd/system/edu-proxyovpn.service ${url}/sshws/ovpn.service && chmod +x /etc/systemd/system/edu-proxyovpn.service
+wget -O /etc/systemd/system/edu-proxyovpn.service ${url}/sshws/edu-proxyovpn.service && chmod +x /etc/systemd/system/edu-proxyovpn.service
 
 
 #restart service
