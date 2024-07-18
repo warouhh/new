@@ -229,15 +229,19 @@ socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 
 [dropbear]
-accept = 222
+accept = 777
 connect = 127.0.0.1:22
 
 [dropbear]
-accept = 777
+accept = 445
 connect = 127.0.0.1:109
 
+[ws-ssl]
+accept = 443
+connect = 700
+
 [openvpn]
-accept = 990
+accept = 442
 connect = 127.0.0.1:1194
 
 END
