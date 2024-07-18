@@ -8,11 +8,13 @@ cd
 wget -O /usr/local/bin/ws-dropbear ${url}/sshws/dropbear-ws.py.txt
 wget -O /usr/local/bin/ws-stunnel ${url}/sshws/ws-stunnel.txt
 wget -O /usr/local/bin/edu-proxyovpn ${url}/sshws/ovpn.py
+wget -O /usr/local/bin/edu-proxyovpn ${url}/sshws/ovpn.py
 
 #izin permision
 #chmod +x /usr/local/bin/edu-proxy
 chmod +x /usr/local/bin/ws-dropbear
 chmod +x /usr/local/bin/ws-stunnel
+chmod +x /usr/local/bin/edu-proxyovpn
 chmod +x /usr/local/bin/edu-proxyovpn
 
 #System Direcly dropbear Websocket-SSH Python
