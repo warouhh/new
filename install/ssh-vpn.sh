@@ -236,10 +236,6 @@ connect = 127.0.0.1:22
 accept = 445
 connect = 127.0.0.1:109
 
-[ws-ssl]
-accept = 443
-connect = 700
-
 [openvpn]
 accept = 442
 connect = 127.0.0.1:1194
