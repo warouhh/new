@@ -1,8 +1,8 @@
 #!/bin/bash
 apt install jq curl -y
-DOMAIN=satanfusion.cloud
+DOMAIN=tepllovpn.eu.org
 sub=$(cat /root/subdomainx)
-dns=${sub}.satanfusion.cloud
+dns=${sub}.tepllovpn.eu.org
 dns2=*.${sub}
 CF_ID=bangtepllo752@gmail.com
 CF_KEY=d8e5c652e1ddcc6fbfb20b1d7b6364de70c82
@@ -41,11 +41,11 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
 --data '{"type":"A","name":"'${dns2}'","content":"'${IP}'","ttl":120,"proxied":false}')
 echo $dns > /root/domain
 echo "$dns" > /etc/xray/domain
-echo "$dn!MYIP=$(wget -qO- icanhazip.com);
+echo "$dn!������MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
-DOMAIN=satanfusion.cloud
+DOMAIN=tepllovpn.eu.org
 sub=$(cat /root/subdomainx)
-dns=${sub}.satanfusion.cloud
+dns=${sub}.tepllovpn.eu.org
 dns2=*.${sub}
 CF_ID=bangtepllo752@gmail.com
 CF_KEY=d8e5c652e1ddcc6fbfb20b1d7b6364de70c82
