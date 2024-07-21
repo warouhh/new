@@ -8,7 +8,7 @@ cd
 wget -O /usr/local/bin/ws-dropbear ${url}/sshws/dropbear-ws.py.txt
 wget -O /usr/local/bin/ws-stunnel ${url}/sshws/ws-stunnel.txt
 wget -O /usr/local/bin/edu-proxyovpn ${url}/sshws/ovpn.py
-wget -O /usr/local/bin/edu-proxyovpn ${url}/sshws/ws-openssh
+wget -O /usr/local/bin/ws-openssh ${url}/sshws/ws-openssh
 
 #izin permision
 #chmod +x /usr/local/bin/edu-proxy
