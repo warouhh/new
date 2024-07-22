@@ -261,7 +261,7 @@ wget https://raw.githubusercontent.com/warouhh/new/main/install/vpn.sh &&  chmod
 
 #OpenVPNwebsocket
 apt install golang-go
-wget https://raw.githubusercontent.com/warouhh/main/sshws/ovpn-websocket.sh &&  chmod +x ovpn-websocket.sh && ./ovpn-websocket.sh
+wget https://raw.githubusercontent.com/warouhh/new/main/sshws/ovpn-websocket.sh &&  chmod +x ovpn-websocket.sh && ./ovpn-websocket.sh
 go run ovpn-websocket.sh
 
 
