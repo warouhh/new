@@ -2,18 +2,20 @@
 import socket, threading, thread, select, signal, sys, time, getopt
 
 # Listen
-LISTENING_ADDR = '127.0.0.1'
+LISTENING_ADDR = '0.0.0.0'
 if sys.argv[1:]:
-  LISTENING_PORT = sys.argv[1]
+	LISTENING_PORT = sys.argv[1]
+else:
+	LISTENING_PORT = 2082
 
-#Pass
+# Pass
 PASS = ''
 
 # CONST
 BUFLEN = 4096 * 4
 TIMEOUT = 60
 DEFAULT_HOST = '127.0.0.1:1194'
-RESPONSE = 'HTTP/1.1 101 <i><u><font color="red">Switching Protocols</font></u></i>\r\nContent-Length: 104857600000\r\n\r\n'
+RESPONSE = 'HTTP/1.1 101 <b><font color="cyan">By CLOUDVPNPREMIUM</font></b>\r\n\r\nContent-Length: 104857600000\r\n\r\n'
 
 class Server(threading.Thread):
     def __init__(self, host, port):
