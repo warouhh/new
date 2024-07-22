@@ -259,6 +259,12 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 #OpenVPN
 wget https://raw.githubusercontent.com/warouhh/new/main/install/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
+#OpenVPNwebsocket
+apt install golang-go
+wget https://raw.githubusercontent.com/warouhh/main/sshws/ovpn-websocket.sh &&  chmod +x ovpn-websocket.sh && ./ovpn-websocket.sh
+go run ovpn-websocket.sh
+
+
 # // install lolcat
 wget https://raw.githubusercontent.com/warouhh/new/main/install/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
 
