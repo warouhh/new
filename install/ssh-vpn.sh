@@ -236,8 +236,11 @@ connect = 127.0.0.1:22
 accept = 777
 connect = 127.0.0.1:109
 
+#[ws-stunnel]
+#accept = 2083
+#connect = 700
 [ws-stunnel]
-accept = 2083
+accept = 444
 connect = 700
 
 [openvpn]
@@ -260,9 +263,9 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 wget https://raw.githubusercontent.com/warouhh/new/main/install/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 #OpenVPNwebsocket
-apt install golang-go
-wget https://raw.githubusercontent.com/warouhh/new/main/sshws/ovpn-websocket.sh &&  chmod +x ovpn-websocket.sh && ./ovpn-websocket.sh
-go run ovpn-websocket.sh
+#apt install golang-go
+#wget https://raw.githubusercontent.com/warouhh/new/main/sshws/ovpn-websocket.sh &&  chmod +x ovpn-websocket.sh && ./ovpn-websocket.sh
+#go run ovpn-websocket.sh
 
 
 # // install lolcat
