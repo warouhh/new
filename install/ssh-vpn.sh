@@ -240,7 +240,7 @@ connect = 127.0.0.1:109
 #accept = 2083
 #connect = 700
 [ws-stunnel]
-accept = 444
+accept = 2096
 connect = 700
 
 [openvpn]
