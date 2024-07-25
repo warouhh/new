@@ -7,15 +7,15 @@ cd
 wget -O /usr/local/bin/edu-proxy ${url}/sshws/https.py
 wget -O /usr/local/bin/ws-dropbear ${url}/sshws/dropbear-ws.py.txt
 wget -O /usr/local/bin/ws-stunnel ${url}/sshws/ws-stunnel.txt
-wget -O /usr/local/bin/edu-proxyovpn ${url}/sshws/ovpn.py
-#wget -O /usr/local/bin/ws-openssh ${url}/sshws/ws-openssh
+#wget -O /usr/local/bin/edu-proxyovpn ${url}/sshws/ovpn.py
+wget -O /usr/local/bin/ws-openssh ${url}/sshws/ws-openssh
 
 #izin permision
-#chmod +x /usr/local/bin/edu-proxy
+chmod +x /usr/local/bin/edu-proxy
 chmod +x /usr/local/bin/ws-dropbear
 chmod +x /usr/local/bin/ws-stunnel
-chmod +x /usr/local/bin/edu-proxyovpn
-#chmod +x /usr/local/bin/ws-openssh
+#chmod +x /usr/local/bin/edu-proxyovpn
+chmod +x /usr/local/bin/ws-openssh
 
 #System Direcly dropbear Websocket-SSH Python
 wget -O /etc/systemd/system/edu-proxy.service ${url}/sshws/http.service && chmod +x /etc/systemd/system/edu-proxy.service
@@ -27,10 +27,10 @@ wget -O /etc/systemd/system/ws-dropbear.service ${url}/sshws/service-wsdropbear.
 wget -O /etc/systemd/system/ws-stunnel.service ${url}/sshws/ws-stunnel.service.txt && chmod +x /etc/systemd/system/ws-stunnel.service
 
 #System Websocket-OpenVPN Python
-wget -O /etc/systemd/system/edu-proxyovpn.service ${url}/sshws/edu-proxyovpn.service && chmod +x /etc/systemd/system/edu-proxyovpn.service
+#wget -O /etc/systemd/system/edu-proxyovpn.service ${url}/sshws/edu-proxyovpn.service && chmod +x /etc/systemd/system/edu-proxyovpn.service
 
 #System Websocket-Openssh
-#wget -O /etc/systemd/system/ws-openssh.service ${url}/sshws/ws-openssh.service && chmod +x /etc/systemd/system/ws-openssh.service
+wget -O /etc/systemd/system/ws-openssh.service ${url}/sshws/ws-openssh.service && chmod +x /etc/systemd/system/ws-openssh.service
 
 
 #restart service
@@ -53,12 +53,12 @@ systemctl start ws-stunnel.service
 systemctl restart ws-stunnel.service
 
 #systemctl daemon-reload
-systemctl enable edu-proxyovpn.service
-systemctl start edu-proxyovpn.service
-systemctl restart edu-proxyovpn.service
+#systemctl enable edu-proxyovpn.service
+#systemctl start edu-proxyovpn.service
+#systemctl restart edu-proxyovpn.service
 
 #Enable & Start & Restart ws-openssh service
-#systemctl enable ws-openssh.service
-#systemctl start ws-openssh.service
-#systemctl restart ws-openssh.service
+systemctl enable ws-openssh.service
+systemctl start ws-openssh.service
+systemctl restart ws-openssh.service
 clear
