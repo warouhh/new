@@ -352,6 +352,12 @@ chmod +x m-theme
 chmod +x speedtest
 chmod +x xp
 cd
+#remove log 
+wget -q -O /usr/bin/removelog "https://raw.githubusercontent.com/hidessh99/HIDE-package/main/log.sh" && chmod +x /usr/bin/removelog
+sleep 1
+
+#cronjob
+echo "30 * * * * root removelog" >> /etc/crontab
 
 #if [ ! -f "/etc/cron.d/xp_otm" ]; then
 cat> /etc/cron.d/xp_otm << END
