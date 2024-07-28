@@ -177,7 +177,7 @@ Login Limit  : ${iplim} IP
 ISP          : ${ISP}
 CITY         : ${CITY}
 Port TLS     : 443
-Port NTLS    : 80, 8080
+Port NTLS    : 80
 Port GRPC    : 443
 UUID         : <code>${uuid}</code>
 AlterId      : 0
@@ -215,7 +215,7 @@ Quota Limit  : ${Quota} GB
 ISP          : ${ISP}
 CITY         : ${CITY}
 Port TLS     : 443
-Port NTLS    : 80, 8080
+Port NTLS    : 80
 Port GRPC    : 443
 UUID         : <code>${uuid}</code>
 AlterId      : 0
@@ -424,7 +424,7 @@ Login Limit  : ${iplim} IP
 ISP          : ${ISP}
 CITY         : ${CITY}
 Port TLS     : 443
-Port NTLS    : 80, 8080
+Port NTLS    : 80
 Port GRPC    : 443
 UUID         : <code>${uuid}</code>
 AlterId      : 0
