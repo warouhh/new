@@ -229,7 +229,7 @@ socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 
 [dropbear]
-accept = 2082
+accept = 8880
 connect = 127.0.0.1:22
 
 [dropbear]
