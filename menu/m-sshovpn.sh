@@ -117,7 +117,7 @@ CITY             : $CITY
 Login Limit      : ${iplim} IP
 Port OpenSSH     : 22
 Port Dropbear    : 143, 109
-Port SSH WS      : 80, 2052
+Port SSH WS      : 80, 2052 
 Port SSH SSL WS  : 443
 Port SSL/TLS     : 2082, 2083
 Port OVPN WS SSL : 2086
@@ -157,7 +157,7 @@ Host             :  <code>$domen</code>
 Login Limit      :  ${iplim} IP
 Port OpenSSH    :  22
 Port Dropbear    :  109, 143
-Port SSH WS     :  80, 2052
+Port SSH WS     :  80, 2052 
 Port SSH SSL WS :  443
 Port SSL/TLS     :  2082, 2083
 Port OVPN WS SSL :  2086
@@ -202,7 +202,7 @@ Host             :  <code>$domen</code>
 Login Limit      :  ${iplim} IP
 Port OpenSSH    :  22
 Port Dropbear    :  109, 143
-Port SSH WS     :  80, 2052
+Port SSH WS     :  80, 2052 
 Port SSH SSL WS :  443
 Port SSL/TLS     :  2082, 2083
 Port OVPN WS SSL :  2086
@@ -271,7 +271,7 @@ echo -e "$COLOR1 $NC  ${WH}Host       ${COLOR1}: ${WH}$domen" | tee -a /etc/xray
 echo -e "$COLOR1 $NC  ${WH}Login Limit${COLOR1}: ${WH}${iplim} IP" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}OpenSSH    ${COLOR1}: ${WH}22" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}Dropbear   ${COLOR1}: ${WH}109, 143" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
-echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}80, 2052" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
+echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}80, 2052 " | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS ${COLOR1}: ${WH}443" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}: ${WH}2082, 2083" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}Ovpn Ws    ${COLOR1}: ${WH}2086" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
@@ -361,7 +361,7 @@ CITY             : $CITY
 Login Limit      : ${iplim} IP
 Port OpenSSH     : 22
 Port Dropbear    : 143, 109
-Port SSH WS      : 80, 2052
+Port SSH WS      : 80, 2052 
 Port SSH SSL WS  : 443
 Port SSL/TLS     : 2082, 2083
 Port OVPN WS SSL : 2086
@@ -401,7 +401,7 @@ Host             :  <code>$domen</code>
 Login Limit      :  ${iplim} IP
 Port OpenSSH    :  22
 Port Dropbear    :  109, 143
-Port SSH WS     :  80, 2052
+Port SSH WS     :  80, 2052 
 Port SSH SSL WS :  443
 Port SSL/TLS     :  2082, 2083
 Port OVPN WS SSL :  2086
@@ -446,7 +446,7 @@ Host             :  <code>$domen</code>
 Login Limit      :  ${iplim} IP
 Port OpenSSH    :  22
 Port Dropbear    :  109, 143
-Port SSH WS     :  80, 2052
+Port SSH WS     :  80, 2052 
 Port SSH SSL WS :  443
 Port SSL/TLS     :  2082, 2083
 Port OVPN WS SSL :  2086
@@ -504,7 +504,7 @@ echo -e "$COLOR1 $NC  ${WH}Host       ${COLOR1}: ${WH}$domen" | tee -a /etc/xray
 echo -e "$COLOR1 $NC  ${WH}Login Limit${COLOR1}: ${WH}${iplim} IP" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}OpenSSH    ${COLOR1}: ${WH}22" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}Dropbear   ${COLOR1}: ${WH}109, 143" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
-echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}80, 2052" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
+echo -e "$COLOR1 $NC  ${WH}SSH-WS     ${COLOR1}: ${WH}80, 2052 " | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}SSH-SSL-WS ${COLOR1}: ${WH}443" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}SSL/TLS    ${COLOR1}: ${WH}2082, 2083" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
 echo -e "$COLOR1 $NC  ${WH}Ovpn Ws    ${COLOR1}: ${WH}2086" | tee -a /etc/xray/sshx/akun/log-create-${Login}.log
@@ -827,7 +827,10 @@ author=$(cat /etc/profil)
 echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}             ${WH}• SSH ACTIVE USERS •              ${NC} $COLOR1│ $NC"
 echo -e "$COLOR1╰═════════════════════════════════════════════════╯${NC}"
+echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
+echo -e ""
 rm -rf /tmp/ssh2
+systemctl restart ws-stunnel > /dev/null 2>&1
 sleep 3
 if [ -e "/var/log/auth.log" ]; then
 LOG="/var/log/auth.log";
