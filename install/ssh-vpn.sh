@@ -197,7 +197,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 apt -y install squid3
 
 # install squid for debian 11
-#apt -y install squid
+apt -y install squid
 wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/warouhh/new/main/install/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
