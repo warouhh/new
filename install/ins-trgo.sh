@@ -104,6 +104,7 @@ END
 
 # restart
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 9443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8880 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
