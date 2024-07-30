@@ -865,8 +865,7 @@ echo -e "${BIBlue}│ ${BGCOLOR} INSTALL SCRIPT SELESAI..                 ${NC}$
 echo -e "${BIBlue}╰════════════════════════════════════════════╯${NC}"
 echo  ""
 sleep 4
-echo -ne "[ ${yell}WARNING${NC} ] reboot now ? (y/n)? "
-read answer
+echo -e "[ ${yell}WARNING${NC} ] Do you want to reboot now ? (y/n)? "; read answer
 if [ "$answer" == "${answer#[Yy]}" ] ;then
 exit 0
 else
