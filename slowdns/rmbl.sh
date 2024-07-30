@@ -3,7 +3,7 @@ apt install jq curl -y
 DOMAIN=tepllovpn.eu.org
 sub=$(cat /root/subdomainx)
 dns=${sub}.tepllovpn.eu.org
-dns2=*.${sub}
+dns2=*.${sub}.tepllovpn.eu.org
 CF_ID=bangtepllo752@gmail.com
 CF_KEY=d8e5c652e1ddcc6fbfb20b1d7b6364de70c82
 set -euo pipefail
@@ -46,7 +46,7 @@ apt install jq curl -y
 DOMAIN=tepllovpn.eu.org
 sub=$(cat /root/subdomainx)
 dns=${sub}.tepllovpn.eu.org
-dns2=*.${sub}
+dns2=*.${sub}.tepllovpn.eu.org
 CF_ID=bangtepllo752@gmail.com
 CF_KEY=d8e5c652e1ddcc6fbfb20b1d7b6364de70c82
 set -euo pipefail
