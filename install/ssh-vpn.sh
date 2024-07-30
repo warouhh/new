@@ -70,6 +70,7 @@ sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 #update
 apt update -y
 apt upgrade -y
+apt clean all
 apt dist-upgrade -y
 apt-get remove --purge ufw firewalld -y
 apt-get remove --purge exim4 -y
@@ -352,6 +353,12 @@ chmod +x m-theme
 chmod +x speedtest
 chmod +x xp
 cd
+cat >/etc/cron.d/logclean <<-END
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+*/59 * * * * root /usr/sbin/logclean
+END
+chmod 644 /root/.profile
 
 #if [ ! -f "/etc/cron.d/xp_otm" ]; then
 cat> /etc/cron.d/xp_otm << END
