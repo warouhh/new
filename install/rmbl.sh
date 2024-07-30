@@ -3,7 +3,7 @@ apt install jq curl -y
 DOMAIN=vvpnstore.my.id
 sub=$(cat /root/subdomainx)
 dns=${sub}.vvpnstore.my.id
-dns2=*.${sub}
+dns2=*.${sub}.vvpnstore.my.id
 CF_ID=imanfals51@gmail.com
 CF_KEY=0f9ed4286475de79bae2b91e9af4f8af9fed9
 set -euo pipefail
@@ -46,7 +46,7 @@ apt install jq curl -y
 DOMAIN=vvpnstore.my.id
 sub=$(cat /root/subdomainx)
 dns=${sub}.vvpnstore.my.id
-dns2=*.${sub}
+dns2=*.${sub}.vvpnstore.my.id
 CF_ID=imanfals51@gmail.com
 CF_KEY=0f9ed4286475de79bae2b91e9af4f8af9fed9
 set -euo pipefail
