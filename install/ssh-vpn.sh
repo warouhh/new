@@ -273,13 +273,13 @@ wget https://raw.githubusercontent.com/warouhh/new/main/install/vpn.sh &&  chmod
 wget https://raw.githubusercontent.com/warouhh/new/main/install/lolcat.sh &&  chmod +x lolcat.sh && ./lolcat.sh
 
 # memory swap 1gb
-cd
-dd if=/dev/zero of=/swapfile bs=1024 count=1048576
-mkswap /swapfile
-chown root:root /swapfile
-chmod 0600 /swapfile >/dev/null 2>&1
-swapon /swapfile >/dev/null 2>&1
-sed -i '$ i\/swapfile      swap swap   defaults    0 0' /etc/fstab
+#cd
+#dd if=/dev/zero of=/swapfile bs=1024 count=1048576
+#mkswap /swapfile
+#chown root:root /swapfile
+#chmod 0600 /swapfile >/dev/null 2>&1
+#swapon /swapfile >/dev/null 2>&1
+#sed -i '$ i\/swapfile      swap swap   defaults    0 0' /etc/fstab
 
 # install fail2ban
 apt -y install fail2ban
@@ -369,7 +369,6 @@ SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 */59 * * * * root /usr/sbin/logclean
 END
-chmod 644 /root/.profile
 
 #if [ ! -f "/etc/cron.d/xp_otm" ]; then
 cat> /etc/cron.d/xp_otm << END
